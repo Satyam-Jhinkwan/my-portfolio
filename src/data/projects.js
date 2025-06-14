@@ -9,6 +9,14 @@ const projects = [
   },
   {
     id: 2,
+    title: "RPG - Dragon Repeller",
+    description:
+      "A simple RPG-style browser game where you must defeat monsters and conquer the dragon to free the town!",
+    tech: ["JavaScript", "HTML", "CSS"],
+    link: "https://github.com/Satyam-Jhinkwan/RPG---Dragon-Repeller",
+  },
+  {
+    id: 3,
     title: "Expense Tracker",
     description:
       "A React app to track income and expenses with data visualization.",
@@ -16,7 +24,7 @@ const projects = [
     link: "https://github.com/Satyam-Jhinkwan/Expense-Tracker",
   },
   {
-    id: 3,
+    id: 4,
     title: "Weather App",
     description: "A weather forecast app using OpenWeatherMap API.",
     tech: ["JavaScript", "API", "HTML", "CSS"],
