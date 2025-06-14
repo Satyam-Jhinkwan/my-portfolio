@@ -5,7 +5,7 @@ import Cpp from "../assets/C++.png";
 import C from "../assets/C.png";
 import React from "../assets/React.png";
 import Git from "../assets/Git.png";
-import MySqL from "../assets/MySqL.png";
+import MySql from "../assets/MySql.png";
 
 const skills = [
   {
@@ -16,7 +16,7 @@ const skills = [
   { title: "Python", src: Python },
   { title: "C++", src: Cpp },
   { title: "C", src: C },
-  { title: "MySQL", src: MySqL },
+  { title: "MySQL", src: MySql },
   { title: "Tailwind CSS", src: TailwindCss },
   { title: "Git & GitHub", src: Git },
 ];
