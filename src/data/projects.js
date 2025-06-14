@@ -5,7 +5,7 @@ const projects = [
     description:
       "A personal portfolio built with React and Tailwind CSS to showcase my skills and projects.",
     tech: ["React", "Tailwind CSS", "JavaScript"],
-    link: "https://github.com/satyamjhinkwan/portfolio",
+    link: "https://github.com/Satyam-Jhinkwan/my-portfolio",
   },
   {
     id: 2,
