@@ -17,11 +17,11 @@ function Navbar() {
 
   return (
     <header
-      className={`top-0 sticky z-50 transition-all duration-300 ease-in-out ${
-        scrolled ? "shadow-lg bg-black/90" : "bg-transparent"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
+        scrolled ? "shadow-lg bg-black/60" : "bg-transparent"
       }`}
     >
-      <nav className="backdrop-blur-md backdrop-saturate-150 px-4 lg:px-12 py-3 font-[poppins]">
+      <nav className="backdrop-blur-[1px] backdrop-saturate-150 px-4 lg:px-12 py-3 font-[poppins]">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen">
           <Link
             to="/"
