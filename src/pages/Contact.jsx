@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BackgroundGradient } from "../components/ui/background-gradient";
-import { BGPattern } from "../components/ui/background-patterns";
+import { motion } from "motion/react";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -20,8 +20,16 @@ function Contact() {
   };
 
   return (
-    <section className="min-h-screen py-16 flex items-center justify-center">
-      <BGPattern variant="dots" mask="fade-edge" />
+    <motion.section
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{
+        delay: 0.5,
+        duration: 0.8,
+        ease: "easeInOut",
+      }}
+      className="min-h-screen py-16 flex items-center justify-center"
+    >
       <BackgroundGradient className="rounded-[22px] min-w-lg p-4 sm:p-10 bg-white dark:bg-zinc-900">
         <h2 className="text-4xl font-extrabold text-red-600 mb-8 text-center drop-shadow-lg">
           Contact Me
@@ -65,7 +73,7 @@ function Contact() {
           </button>
         </form>
       </BackgroundGradient>
-    </section>
+    </motion.section>
   );
 }
 

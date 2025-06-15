@@ -26,7 +26,7 @@ function Home() {
             Download Resume
           </a>
           <a
-            href="/contact"
+            href="#contact"
             className="border-2 border-red-600 text-red-600 hover:bg-white/15 font-semibold py-3 px-8 rounded-lg transition duration-200 transform hover:scale-105"
           >
             Contact Me

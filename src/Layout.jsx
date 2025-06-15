@@ -6,7 +6,6 @@ import { BackgroundBeams } from "./components/ui/background-beams"; // adjust pa
 function Layout() {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const isAbout = location.pathname === "/about";
 
   return (
     <div className="relative min-h-screen bg-neutral-950 overflow-hidden">
