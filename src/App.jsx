@@ -9,7 +9,7 @@ import { TracingBeam } from "./components/ui/tracing-beam";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-neutral-950 ">
+    <main className="relative overflow-hidden ">
       <Navbar />
       <TracingBeam className="px-6">
         <section id="home" className="flex justify-center">
@@ -29,7 +29,7 @@ function App() {
         </section>
       </TracingBeam>
       <Footer />
-    </div>
+    </main>
   );
 }
 

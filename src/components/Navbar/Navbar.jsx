@@ -1,94 +1,71 @@
 import { useState, useEffect } from "react";
+import { Link as LinkScroll } from "react-scroll";
+import clsx from "clsx";
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      setScrolled(offset > 50);
+      setHasScrolled(window.scrollY > 32);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [activeSection, setActiveSection] = useState("#home");
+  const navItems = [
+    {
+      title: "Home",
+    },
+    {
+      title: "About",
+    },
+    {
+      title: "Projects",
+    },
+    {
+      title: "Skills",
+    },
+    {
+      title: "Contact",
+    },
+  ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["#home", "#about", "#projects", "#skills", "#contact"];
-      const offsets = sections.map((id) => {
-        const el = document.querySelector(id);
-        return el ? el.offsetTop : 0;
-      });
-
-      const scrollPosition = window.scrollY + 80;
-
-      let currentSection = "#home";
-      for (let i = 0; i < offsets.length; i++) {
-        if (scrollPosition >= offsets[i]) {
-          currentSection = sections[i];
-        }
-      }
-      setActiveSection(currentSection);
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleNavClick = (href) => {
-    setActiveSection(href);
-    const el = document.querySelector(href);
-    if (el) {
-      window.scrollTo({
-        top: el.offsetTop - 70,
-        behavior: "smooth",
-      });
-    }
-  };
+  const NavLink = ({ title }) => (
+    <LinkScroll
+      to={title.toLowerCase()}
+      spy
+      smooth
+      activeClass="nav-active"
+      className="block py-2 px-5 transition-all text-white duration-500 hover:text-red-800 hover:underline underline-offset-8 cursor-pointer"
+    >
+      {title}
+    </LinkScroll>
+  );
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
-        scrolled ? "shadow-lg bg-black/60" : "bg-transparent"
-      }`}
+      className={clsx(
+        "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out",
+        hasScrolled ? "py-1 shadow-lg bg-black/80" : "bg-transparent py-5"
+      )}
     >
       <nav className="backdrop-blur-[1px] backdrop-saturate-150 px-4 lg:px-12 py-3 font-[poppins]">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen">
-          <a
-            href="#home"
-            className=" text-2xl font-bold tracking-wide transition-all duration-300 ease-in-out hover:text-red-800 hover:scale-101"
-            onClick={() => handleNavClick("#home")}
+          <LinkScroll
+            to="home"
+            spy
+            smooth
+            className="text-2xl font-bold tracking-wide transition-all duration-300 ease-in-out hover:text-red-800 hover:scale-101 cursor-pointer"
           >
             Satyam
-          </a>
-          <div className="hidden lg:flex items-center w-auto lg:order-1">
+          </LinkScroll>
+          <div className="flex items-center w-auto order-1">
             <ul className="flex flex-row space-x-2 lg:space-x-12 font-medium text-lg">
-              {[
-                { href: "#home", label: "Home" },
-                { href: "#about", label: "About" },
-                { href: "#projects", label: "Projects" },
-                { href: "#skills", label: "Skills" },
-                { href: "#contact", label: "Contact" },
-              ].map(({ href, label }) => (
-                <li key={href}>
-                  <a
-                    href={href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(href);
-                    }}
-                    className={`block py-2 px-5 transition-all duration-200 ${
-                      activeSection === href
-                        ? "text-red-800 underline underline-offset-8"
-                        : "text-white"
-                    } hover:text-red-800 hover:underline underline-offset-8`}
-                  >
-                    {label}
-                  </a>
+              {navItems.map((item) => (
+                <li key={item.title}>
+                  <NavLink title={item.title} />
                 </li>
               ))}
             </ul>
