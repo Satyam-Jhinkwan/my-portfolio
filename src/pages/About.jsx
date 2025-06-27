@@ -8,7 +8,7 @@ function About() {
   return (
     <Element name="about">
       <section className="relative flex justify-center items-center py-16 md:py-24 px-4">
-        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 min-h-[70vh] text-white">
+        <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 min-h-[70vh] dark:text-white">
           <motion.img
             src={profilePic}
             alt="Satyam Jhinkwan"

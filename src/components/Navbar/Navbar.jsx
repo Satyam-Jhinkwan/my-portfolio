@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import clsx from "clsx";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 function Navbar() {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -38,7 +39,7 @@ function Navbar() {
       spy
       smooth
       activeClass="nav-active"
-      className="block py-2 px-5 transition-all text-white duration-500 hover:text-red-800 hover:underline underline-offset-8 cursor-pointer"
+      className="block py-2 px-5 transition-all text-black/80 outlined dark:text-white duration-500 hover:text-red-800 hover:underline underline-offset-8 cursor-pointer"
     >
       {title}
     </LinkScroll>
@@ -48,7 +49,7 @@ function Navbar() {
     <header
       className={clsx(
         "fixed top-0 w-full z-50 transition-all duration-300 ease-in-out",
-        hasScrolled ? "py-1 shadow-lg bg-black/80" : "bg-transparent py-5"
+        hasScrolled ? "py-1 shadow-lg bg-black/80 " : "bg-transparent py-5"
       )}
     >
       <nav className="backdrop-blur-[1px] backdrop-saturate-150 px-4 lg:px-12 py-3 font-[poppins]">
@@ -57,7 +58,7 @@ function Navbar() {
             to="home"
             spy
             smooth
-            className="text-2xl font-bold tracking-wide transition-all duration-300 ease-in-out hover:text-red-800 hover:scale-101 cursor-pointer"
+            className="text-2xl font-bold text-red-800  tracking-wide transition-all duration-300 ease-in-out hover:text-red-700 hover:scale-101 cursor-pointer"
           >
             Satyam
           </LinkScroll>
@@ -68,6 +69,7 @@ function Navbar() {
                   <NavLink title={item.title} />
                 </li>
               ))}
+              <ThemeToggle />
             </ul>
           </div>
         </div>

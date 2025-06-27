@@ -8,7 +8,7 @@ function Home() {
     <Element name="home">
       <section className="flex items-center justify-center min-h-screen">
         <div className="max-w-3xl w-full text-center p-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4 tracking-tight drop-shadow">
+          <h1 className="text-5xl md:text-6xl font-extrabold dark:text-white mb-4 tracking-tight drop-shadow">
             Hi, I’m <span className="text-red-700">Satyam Jhinkwan</span>
           </h1>
 

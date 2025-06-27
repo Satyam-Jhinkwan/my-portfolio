@@ -7,9 +7,11 @@
   --font-poppins: "Poppins", "sans-serif";
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
-    @apply font-poppins text-[16px] tracking-[-0.03em] bg-neutral-950;
+    @apply font-poppins text-[16px] tracking-[-0.03em] bg-white dark:bg-neutral-950;
   }
 
   a {
@@ -28,12 +30,7 @@
   .container {
     @apply mx-auto max-w-[1252px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-nav {
-  color: #b45353;
+  .bg-light-gradient {
+    @apply bg-gradient-to-t from-[#dfe9f3] to-white;
+  }
 }

@@ -32,7 +32,7 @@ function Contact() {
         }}
         className="min-h-screen flex items-center justify-center mt-10 mb-10"
       >
-        <BackgroundGradient className="rounded-[22px] min-w-lg p-4 sm:p-10 bg-white dark:bg-zinc-900">
+        <BackgroundGradient className="rounded-[22px] min-w-lg p-4 sm:p-10 dark:bg-zinc-900 bg-gray-300/20">
           <h2 className="text-4xl font-extrabold text-red-600 mb-8 text-center drop-shadow-lg">
             Contact Me
           </h2>
@@ -47,7 +47,7 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="border text-white border-orange-200 bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition placeholder-gray-300"
+              className="border-2 dark:text-white border-black dark:border-orange-300 bg-gray-200/30 dark:bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition placeholder-gray-900 dark:placeholder-gray-300 dark:caret-red-400"
             />
             <input
               type="email"
@@ -56,7 +56,7 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="border text-white border-orange-200 bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition placeholder-gray-300"
+              className="border-2 dark:text-white border-black dark:border-orange-300 bg-gray-200/30 dark:bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 transition placeholder-gray-900 dark:placeholder-gray-300 dark:caret-red-400"
             />
             <textarea
               name="message"
@@ -65,7 +65,7 @@ function Contact() {
               onChange={handleChange}
               required
               rows="5"
-              className="border text-white border-orange-200 bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 resize-none transition placeholder-gray-300"
+              className="border-2 dark:text-white border-black dark:border-orange-300 bg-gray-200/30 dark:bg-neutral-900 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400 resize-none transition placeholder-gray-900 dark:placeholder-gray-300 dark:caret-red-400"
             />
             <button
               type="submit"
